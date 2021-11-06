@@ -1,18 +1,18 @@
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark" style="display: none;">
-  <!-- Create the tabs -->
-  <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 
-  </ul>
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <!-- Home tab content -->
-    <div class="tab-pane" id="control-sidebar-home-tab">
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane" id="control-sidebar-home-tab">
+        </div>
+        <!-- /.tab-pane -->
+
+
     </div>
-    <!-- /.tab-pane -->
-
-
-  </div>
 </aside>
 <!-- /.control-sidebar -->
 <!-- Add the sidebar's background. This div must be placed
@@ -22,12 +22,12 @@
 <!-- ./wrapper -->
 
 <style>
-  .btn-file {
+.btn-file {
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .btn-file input[type=file] {
+.btn-file input[type=file] {
     position: absolute;
     top: 0;
     right: 0;
@@ -40,7 +40,7 @@
     outline: none;
     cursor: inherit;
     display: block;
-  }
+}
 </style>
 
 
@@ -55,7 +55,7 @@
 <script src="../../bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+$.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -89,130 +89,130 @@
 
 
 <script>
-  $(document).ready(function() {
+$(document).ready(function() {
     $('#example').DataTable();
-  });
+});
 </script>
 
 <!-- Brisanje obicnog korisnika(ne admina) -->
 <script>
-  function delUser(item) {
+function delUser(item) {
     if (confirm('Da li ste sigurni?')) {
-      var formData = {
-        'user_id': item
-      };
-      $.ajax({
-        type: 'POST',
-        url: '../../../functions/delete-user.php',
-        data: formData,
-        success: function(response) {
-          if (response.error) {
-            console.log(response.error);
-            alert(response.error);
-          } else {
-            console.log(response.success);
-            window.location.reload(true);
-          }
-        },
-        error: function(error) {
-          console.log(error);
-          alert("Greška, učitajte ponovo");
-        },
-        async: false
-      });
+        var formData = {
+            'user_id': item
+        };
+        $.ajax({
+            type: 'POST',
+            url: '../../../functions/delete-user.php',
+            data: formData,
+            success: function(response) {
+                if (response.error) {
+                    console.log(response.error);
+                    alert(response.error);
+                } else {
+                    console.log(response.success);
+                    window.location.reload(true);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+                alert("Greška, učitajte ponovo");
+            },
+            async: false
+        });
     }
-  }
+}
 </script>
 
 
 <!-- Brisanje super korisnika(admina) -->
 <script>
-  function delSuperUser(item) {
+function delSuperUser(item) {
     if (confirm('Da li ste sigurni?')) {
-      var formData = {
-        'admin_id': item
-      };
-      $.ajax({
-        type: 'POST',
-        url: '../../../functions/delete-admin.php',
-        data: formData,
-        success: function(response) {
-          if (response.error) {
-            console.log(response.error);
-            alert(response.error);
-          } else {
-            console.log(response.success);
-            window.location.reload(true);
-          }
-        },
-        error: function(error) {
-          console.log(error);
-          alert("Greška, učitajte ponovo");
-        },
-        async: false
-      });
+        var formData = {
+            'admin_id': item
+        };
+        $.ajax({
+            type: 'POST',
+            url: '../../../functions/delete-admin.php',
+            data: formData,
+            success: function(response) {
+                if (response.error) {
+                    console.log(response.error);
+                    alert(response.error);
+                } else {
+                    console.log(response.success);
+                    window.location.reload(true);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+                alert("Greška, učitajte ponovo");
+            },
+            async: false
+        });
     }
-  }
+}
 </script>
 
 
 <!-- Brisanje poruke -->
 <script>
-  function delMessage(item) {
+function delMessage(item) {
     if (confirm('Da li ste sigurni?')) {
-      var formData = {
-        'W': item
-      };
-      $.ajax({
-        type: 'POST',
-        url: '../../../functions/delete-message.php',
-        data: formData,
-        success: function(response) {
-          if (response.error) {
-            console.log(response.error);
-            alert(response.error);
-          } else {
-            console.log(response.success);
-            window.location.reload(true);
-          }
-        },
-        error: function(error) {
-          console.log(error);
-          alert("Greška, učitajte ponovo");
-        },
-        async: false
-      });
+        var formData = {
+            'W': item
+        };
+        $.ajax({
+            type: 'POST',
+            url: '../../../functions/delete-message.php',
+            data: formData,
+            success: function(response) {
+                if (response.error) {
+                    console.log(response.error);
+                    alert(response.error);
+                } else {
+                    console.log(response.success);
+                    window.location.reload(true);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+                alert("Greška, učitajte ponovo");
+            },
+            async: false
+        });
     }
-  }
+}
 </script>
 
 <script>
-  function setAsSeen(item) {
+function setAsSeen(item) {
 
     var formData = {
-      'message_id': item
+        'message_id': item
     };
     $.ajax({
-      type: 'POST',
-      url: '../../../functions/update-message.php',
-      data: formData,
-      success: function(response) {
-        if (response.error) {
-          console.log(response.error);
-          alert(response.error);
-        } else {
-          console.log(response.success);
-          window.location.reload(true);
-        }
-      },
-      error: function(error) {
-        console.log(error);
-        alert("Greška, učitajte ponovo");
-      },
-      async: false
+        type: 'POST',
+        url: '../../../functions/update-message.php',
+        data: formData,
+        success: function(response) {
+            if (response.error) {
+                console.log(response.error);
+                alert(response.error);
+            } else {
+                console.log(response.success);
+                window.location.reload(true);
+            }
+        },
+        error: function(error) {
+            console.log(error);
+            alert("Greška, učitajte ponovo");
+        },
+        async: false
     });
 
-  }
+}
 </script>
 
 
